@@ -14,6 +14,8 @@ repositories {
 dependencies {
     compile 'org.projectlombok:lombok:1.16.4'
     compile 'org.functionaljava:functionaljava:4.4'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.1'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.1'
 
     testCompile 'junit:junit:4.+'
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
