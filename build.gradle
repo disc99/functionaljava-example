@@ -41,6 +41,7 @@ task wrapper(type: Wrapper) {
 
 jacocoTestReport {
     reports {
-        xml.enabled = true
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
     }
 }

@@ -4,17 +4,16 @@ import example.data.User;
 import fj.data.NonEmptyList;
 import fj.data.Option;
 import fj.data.Validation;
-import lombok.AllArgsConstructor;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static example.validation.UserVal1idations.nameOk;
+import static example.validation.UserValidations.nameOk;
 import static fj.Semigroup.nonEmptyListSemigroup;
 import static fj.Semigroup.stringSemigroup;
 import static fj.data.Validation.fail;
 import static fj.data.Validation.success;
-import static example.validation.UserVal1idations.ageOk;
-import static example.validation.UserVal1idations.emailOk;
+import static example.validation.UserValidations.ageOk;
+import static example.validation.UserValidations.emailOk;
 import static org.hamcrest.CoreMatchers.is;
 
 public class ValidationTest {
@@ -44,7 +43,7 @@ public class ValidationTest {
     }
 }
 
-class UserVal1idations {
+class UserValidations {
 
     static Validation<String, String> ageOk(User u) {
         return u.age > 18 ? success("age ok.") : fail("too young.");
