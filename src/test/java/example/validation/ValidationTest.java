@@ -1,5 +1,6 @@
 package example.validation;
 
+import example.data.User;
 import fj.data.NonEmptyList;
 import fj.data.Option;
 import fj.data.Validation;
@@ -41,13 +42,6 @@ public class ValidationTest {
         // Verify
         Assert.assertThat(v.toString(), is("Some(List(too young.,no name.,no email.))"));
     }
-}
-
-@AllArgsConstructor
-class User {
-    int age;
-    String name;
-    String email;
 }
 
 class UserVal1idations {

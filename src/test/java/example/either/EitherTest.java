@@ -21,7 +21,7 @@ public class EitherTest {
         final Effect1<Exception> stackTrace = Exception::printStackTrace;
         final Effect1<JsonNode> sysout = System.out::println;
 
-        get.f(url).right().bind(parse)
+        get.f(url).right().bind(get).right().bind(parse)
                 .either(Effect.f(stackTrace), Effect.f(sysout));
     }
 
