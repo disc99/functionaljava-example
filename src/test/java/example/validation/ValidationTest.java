@@ -41,6 +41,18 @@ public class ValidationTest {
         // Verify
         Assert.assertThat(v.toString(), is("Some(List(too young.,no name.,no email.))"));
     }
+
+    @Test
+    public void testNonEmptyListSemigroupValid() throws Exception {
+        // Setup
+        User user = new User(22, "Tom", "email@email.com");
+
+        // Exercise
+        Option<NonEmptyList<String>> v = ageOk(user).nel().accumulate(nonEmptyListSemigroup(), nameOk(user).nel(), emailOk(user).nel());
+
+        // Verify
+        Assert.assertThat(v.toString(), is("None"));
+    }
 }
 
 class UserValidations {
